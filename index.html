@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>National Discord Hockey League</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&family=Roboto&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            color: #fff;
+            background: linear-gradient(135deg, #0f0f0f, #1c1c1c);
+        }
+
+        /* Navbar */
+        nav {
+            background: #000;
+            display: flex;
+            justify-content: center;
+            padding: 20px 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+        }
+
+        .dropdown-menu {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .dropdown-menu>li {
+            position: relative;
+            margin: 0 20px;
+        }
+
+        .dropdown-menu>li>a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .dropdown-menu>li>a:hover {
+            color: red;
+        }
+
+        .submenu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: red;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: none;
+            border-radius: 5px;
+        }
+
+        .submenu li a {
+            display: block;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .submenu li a:hover {
+            background: #000;
+        }
+
+        .dropdown-menu>li:hover .submenu {
+            display: block;
+        }
+
+        /* Header */
+        h1 {
+            text-align: center;
+            font-family: 'Oswald', sans-serif;
+            font-size: 3rem;
+            margin: 40px 0;
+            text-shadow: 2px 2px 5px #000;
+        }
+
+        h1 b {
+            color: red;
+        }
+
+        /* Staff Table */
+        table {
+            width: 80%;
+            margin: 40px auto;
+            border-collapse: collapse;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+        }
+
+        th,
+        td {
+            border: 1px solid #fff;
+            padding: 15px;
+            text-align: center;
+        }
+
+        th {
+            background-color: red;
+        }
+
+        tr:nth-child(even) {
+            background-color: #222;
+        }
+
+        tr:nth-child(odd) {
+            background-color: #333;
+        }
+
+        /* FORM */
+        form {
+            width: 80%;
+            max-width: 600px;
+            margin: 60px auto;
+            padding: 40px;
+            background: #111;
+            border-radius: 15px;
+            box-shadow: 0 0 20px red;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        form:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 30px red;
+        }
+
+        form label {
+            display: block;
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            color: white;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        form input[type="text"],
+        form select,
+        form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 8px;
+            background-color: #222;
+            color: #fff;
+            font-size: 1rem;
+            box-shadow: inset 0 0 5px red;
+            transition: box-shadow 0.3s ease, background 0.3s ease;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 2rem;
+        }
+
+        h2 b {
+            color: red;
+        }
+
+        form input[type="text"]:focus,
+        form select:focus,
+        form textarea:focus {
+            outline: none;
+            background-color: #1a1a1a;
+            box-shadow: 0 0 10px red, 0 0 20px rgba(255, 0, 0, 0.7);
+        }
+
+        form button[type="submit"] {
+            display: block;
+            width: 100%;
+            padding: 15px 0;
+            border: none;
+            border-radius: 8px;
+            background-color: red;
+            color: #fff;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
+        }
+
+        form button[type="submit"]:hover {
+            background-color: #ff4d4d;
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(255, 0, 0, 0.6);
+        }
+
+        form button[type="reset"] {
+            display: block;
+            width: 100%;
+            padding: 15px 0;
+            margin-top: 10px;
+            border: none;
+            border-radius: 8px;
+            background-color: #333;
+            color: #fff;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        form button[type="reset"]:hover {
+            background-color: #444;
+            transform: scale(1.03);
+        }
+
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background: #000;
+            margin-top: 40px;
+        }
+
+        /* Miscellaneous */
+        img {
+            display: block;
+            margin: 20px auto;
+            border-radius: 50%;
+            border: 5px solid red;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+        }
+
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            background-color: red;
+            color: #fff;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background-color: #ff4d4d;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <ul class="dropdown-menu">
+            <li><a href="https://cgi.luddy.indiana.edu/~sambereb/NDHL/index.html">Home</a></li>
+            <li>
+                <a href="#">Explore</a>
+                <ul class="submenu">
+                    <li><a href="https://cgi.luddy.indiana.edu/~sambereb/NDHL/AboutUs.html">About Us</a></li>
+                    <li><a href="https://gofund.me/096d9da3">Donations</a></li>
+                    <li><a href="https://cgi.luddy.indiana.edu/~sambereb/NDHL/ContactUs.html">Contact</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">The League</a>
+                <ul class="submenu">
+                    <li><a href="https://cgi.luddy.indiana.edu/~sambereb/NDHL/LeagueInfo.html">League Info</a></li>
+                    <li><a href="https://cgi.luddy.indiana.edu/~sambereb/NDHL/LeagueStandings.html">League Standings</a>
+                    </li>
+                    <li><a href="https://cgi.luddy.indiana.edu/~sambereb/NDHL/Rosters.html">Rosters</a></li>
+                </ul>
+            </li>
+            <li><a href="https://www.youtube.com/@nxnosamo3367">Subscribe</a></li>
+            <li><a href="https://discord.gg/b6vMyJ5pmw">Discord</a></li>
+            <li><a href="https://cgi.luddy.indiana.edu/~sambereb/NDHL/login.html">Admin Login</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header -->
+    <h1>WELCOME TO THE OFFICIAL <b>NDHL</b> WEBSITE!</h1>
+
+    <!-- Logo -->
+    <a href="https://imgbb.com/"><img src="https://i.ibb.co/Cp48KCrt/f-Tyo-KVd-Imgur.png" alt="f-Tyo-KVd-Imgur"
+            border="0" width="300" height="300"></a>
+
+    <!-- Staff Table -->
+    <table>
+        <tr>
+            <th>Staff</th>
+            <th>Role</th>
+            <th>Position</th>
+            <th>Favorite Team</th>
+        </tr>
+        <tr>
+            <td>Peyton</td>
+            <td>The Creator</td>
+            <td>Goalie</td>
+            <td>Chicago Blackhawks</td>
+        </tr>
+        <tr>
+            <td>Sam</td>
+            <td>Commissioner</td>
+            <td>Defense</td>
+            <td>LA Kings</td>
+        </tr>
+        <tr>
+            <td>Scott</td>
+            <td>Commissioner</td>
+            <td>Forward</td>
+            <td>Ottawa Senators</td>
+        </tr>
+        <tr>
+            <td>Gucci</td>
+            <td>Commissioner</td>
+            <td>Anything</td>
+            <td>Hamilton Tigers</td>
+        </tr>
+        <tr>
+            <td>Ashton</td>
+            <td>Commissioner</td>
+            <td>Goalie</td>
+            <td>Edmonton Oilers</td>
+        </tr>
+        <tr>
+            <td>Duff</td>
+            <td>Statistician</td>
+            <td>Goalie</td>
+            <td>Toronto Maple Leafs</td>
+        </tr>
+        <tr>
+            <td>Brady</td>
+            <td>Statistician</td>
+            <td>Forward</td>
+            <td>Toronto Maple Leafs</td>
+        </tr>
+        <tr>
+            <td>Ben</td>
+            <td>Discipline</td>
+            <td>Forward</td>
+            <td>Pittsburgh Penguins</td>
+        </tr>
+        <tr>
+            <td>Jake</td>
+            <td>Social Media</td>
+            <td>Forward</td>
+            <td>New Jersey Devils</td>
+        </tr>
+    </table>
+
+    <!-- Application Form
+<h3 style="text-align:center; color: red;">Apply to Join NDHL Staff!</h3>
+<form action="/action_page.php">
+    <input type="text" placeholder="First Name" name="fname" required>
+    <input type="text" placeholder="Last Name" name="lname" required>
+    <input type="text" placeholder="Email Address" name="email" required>
+    <br><br>
+    <input type="submit" value="Apply">
+</form> -->
+
+    <!-- Complaint Button
+<button onclick="alert('Kill Yourself!')">Submit Complaint</button> -->
+
+    <!-- Email Form -->
+    <title>Team Signup Form</title>
+
+    <body>
+        <div class="form-container">
+            <h2>League <b>Signup</b></h2>
+            <form action="sendmail.php" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="psn">PSN:</label>
+                <input type="text" id="psn" name="psn" required>
+
+                <label for="position">Preferred Position:</label>
+                <select id="position" name="position" required>
+                    <option value="Center">Center</option>
+                    <option value="Winger">Winger</option>
+                    <option value="Defenseman">Defenseman</option>
+                    <option value="Goalie">Goalie</option>
+                </select>
+
+                <label for="availability">Availability:</label>
+                <input type="text" id="availability" name="availability" required>
+
+                <label for="color">Favorite Color:</label>
+                <input type="text" id="color" name="color" required>
+
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </body>
+
+    <h10>
+        <div id="chicago-time" style="text-align:center; margin-top:20px; font-size:1.2rem;"></div>
+        <div id="chicago-weather" style="text-align:center; margin-top:10px; font-size:1.2rem;"></div>
+
+        <script>
+            // Function to update the current time in Chicago
+            function updateTime() {
+                const options = { timeZone: 'America/Chicago', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+                const now = new Date().toLocaleTimeString([], options);
+                document.getElementById('chicago-time').innerText = `Current Time in Chicago: ${now}`;
+            }
+
+            // Function to fetch and display the current weather in Chicago
+            async function updateWeather() {
+                const apiKey = 'f1d234979d6744af88744610250601'; // Your API key
+                const apiUrl = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=Chicago&aqi=no`;
+
+                try {
+                    const response = await fetch(apiUrl);
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    const data = await response.json();
+                    const { temp_f, condition } = data.current;
+                    document.getElementById('chicago-weather').innerText = `Current Weather in Chicago: ${temp_f}F, ${condition.text}`;
+                } catch (error) {
+                    console.error('Error fetching weather data:', error);
+                    document.getElementById('chicago-weather').innerText = 'Unable to retrieve weather data.';
+                }
+            }
+
+            // Update time every second
+            setInterval(updateTime, 1000);
+
+            // Update weather every 30 minutes
+            updateWeather();
+            setInterval(updateWeather, 1800000);
+
+            // Initial call
+            updateTime();
+            updateWeather();
+        </script>
+    </h10>
+    <br>
+    <h11>
+        <div id="ashgabat-time" style="text-align:center; margin-top:20px; font-size:1.2rem;"></div>
+        <div id="ashgabat-weather" style="text-align:center; margin-top:10px; font-size:1.2rem;"></div>
+
+        <script>
+            // Function to update the current time in Ashgabat
+            function updateTime() {
+                const options = { timeZone: 'Asia/Ashgabat', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+                const now = new Date().toLocaleTimeString([], options);
+                document.getElementById('ashgabat-time').innerText = `Current Time in Ashgabat, Turkmenistan: ${now}`;
+            }
+
+            // Function to fetch and display the current weather in Ashgabat
+            async function updateWeather() {
+                const apiKey = 'f1d234979d6744af88744610250601'; // Your API key
+                const apiUrl = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=Ashgabat&aqi=no`;
+
+                try {
+                    const response = await fetch(apiUrl);
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    const data = await response.json();
+                    const { temp_f, condition } = data.current;
+                    document.getElementById('ashgabat-weather').innerText = `Current Weather in Ashgabat, Turkmenistan: ${temp_f}F, ${condition.text}`;
+                } catch (error) {
+                    console.error('Error fetching weather data:', error);
+                    document.getElementById('ashgabat-weather').innerText = 'Unable to retrieve weather data.';
+                }
+            }
+
+            // Update time every second
+            setInterval(updateTime, 1000);
+
+            // Update weather every 30 minutes
+            updateWeather();
+            setInterval(updateWeather, 1800000);
+
+            // Initial call
+            updateTime();
+            updateWeather();
+        </script>
+    </h11>
+    <br><br><br><br><br>
+    <footer>
+        <p>&copy; 2025 The National Discord Hockey League. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

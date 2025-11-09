@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>National Discord Hockey League</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&family=Roboto&display=swap" rel="stylesheet">
+<style>
+    body {
+        margin: 0;
+        font-family: 'Roboto', sans-serif;
+        color: #fff;
+        background: linear-gradient(135deg, #0f0f0f, #1c1c1c);
+    }
+
+    /* Navbar */
+    nav {
+        background: #000;
+        display: flex;
+        justify-content: center;
+        padding: 20px 0;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.7);
+    }
+
+    .dropdown-menu {
+        list-style: none;
+        display: flex;
+        margin: 0;
+        padding: 0;
+    }
+
+    .dropdown-menu > li {
+        position: relative;
+        margin: 0 20px;
+    }
+
+    .dropdown-menu > li > a {
+        text-decoration: none;
+        color: #fff;
+        font-size: 1.5rem;
+        transition: color 0.3s;
+    }
+
+    .dropdown-menu > li > a:hover {
+        color: red;
+    }
+
+    .submenu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: red;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: none;
+        border-radius: 5px;
+    }
+
+    .submenu li a {
+        display: block;
+        color: #fff;
+        padding: 10px 20px;
+        text-decoration: none;
+        transition: background 0.3s;
+    }
+
+    .submenu li a:hover {
+        background: #000;
+    }
+
+    .dropdown-menu > li:hover .submenu {
+        display: block;
+    }
+
+    /* Header */
+    h1 {
+        text-align: center;
+        font-family: 'Oswald', sans-serif;
+        font-size: 3rem;
+        margin: 40px 0;
+        text-shadow: 2px 2px 5px #000;
+    }
+
+    h1 b {
+        color: red;
+    }
+
+    table {
+        width: 90%;
+        margin: 40px auto;
+        border-collapse: collapse;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    }
+
+    table thead {
+        background-color: red;
+    }
+
+    th, td {
+        border: 1px solid #fff;
+        padding: 15px;
+        text-align: center;
+    }
+
+    tr:nth-child(even) {
+        background-color: #222;
+    }
+
+    tr:nth-child(odd) {
+        background-color: #333;
+    }
+
+</style>
+</head>
+<body> 
+
+<!-- Navbar -->
+<nav>
+    <ul class="dropdown-menu">
+        <li><a href="https://cgi.luddy.indiana.edu/~sambereb/NDHL/index.html">Home</a></li>
+        <li>
+            <a href="#">Explore</a>
+            <ul class="submenu">
+                <li><a href="https://cgi.luddy.indiana.edu/~sambereb/NDHL/AboutUs.html">About Us</a></li>
+                <li><a href="https://gofund.me/096d9da3">Donations</a></li>
+                <li><a href="https://cgi.luddy.indiana.edu/~sambereb/NDHL/ContactUs.html">Contact</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">The League</a>
+            <ul class="submenu">
+                <li><a href="https://cgi.luddy.indiana.edu/~sambereb/NDHL/LeagueInfo.html">League Info</a></li>
+                <li><a href="https://cgi.luddy.indiana.edu/~sambereb/NDHL/LeagueStandings.html">League Standings</a></li>
+                <li><a href="https://cgi.luddy.indiana.edu/~sambereb/NDHL/Rosters.html">Rosters</a></li>
+            </ul>
+        </li>
+        <li><a href="https://www.youtube.com/@nxnosamo3367">Subscribe</a></li>
+        <li><a href="https://discord.gg/b6vMyJ5pmw">Discord</a></li>
+    </ul>
+</nav>
+
+<!-- Header -->
+<h1>LEAGUE <b>STANDINGS</b></h1>
+
+<!-- Table -->
+<table>
+    <thead>
+        <tr>
+            <th> </th>
+            <td>Team</td>
+            <td>Games Played</td>
+            <td>Wins</td>
+            <th>Losses</th>
+            <th>OT Losses</th>
+            <th>Points</th>
+            <th>Point %</th>
+            <th>Goals For</th>
+            <th>Goals Against</th>
+            <th>Goal Differential</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th><img src="https://upload.wikimedia.org/wikipedia/en/7/74/Kansas_City_Scouts_logo.svg" width="50" height="50"></th>
+            <th>Kansas City Scouts</th>
+            <th>33</th>
+            <th>26</th>
+            <th>3</th>
+            <th>4</th>
+            <th>56</th>
+            <th>90.91%</th>
+            <th>86</th>
+            <th>37</th>
+            <th>+49</th>
+        </tr>
+    </tbody>
+    <tbody>
+        <tr>
+            <th><img src="https://upload.wikimedia.org/wikipedia/commons/0/02/Boston_Bruins_100th_anniversary_logo.svg" width="50" height="50"></th>
+            <th>Boston Bruins</th>
+            <th>33 </th>
+            <th>20 </th>
+            <th>9 </th>
+            <th>4 </th>
+            <th>44 </th>
+            <th>72.73% </th>
+            <th>47 </th>
+            <th>43 </th>
+            <th>+4 </th>
+        </tr>
+    </tbody>
+    <tbody>
+        <tr>
+            <th><img src="https://upload.wikimedia.org/wikipedia/en/b/b2/Ottawa_Senators_2020-2021_logo.svg" width="50" heaight="50"></th>
+            <th>Ottawa Senators</th>
+            <th>33</th>
+            <th>22</th>
+            <th>11</th>
+            <th>0</th>
+            <th>44</th>
+            <th>66.67%</th>
+            <th>89</th>
+            <th>53</th>
+            <th>+36</th>
+        </tr>
+    </tbody>
+    <tbody>
+        <tr>
+            <th><img src="https://upload.wikimedia.org/wikipedia/en/9/96/Quebec_Nordiques_Logo.svg" width="50" height="50"></th>
+            <th>Quebec Nordiques</th>
+            <th>32 </th>
+            <th>16 </th>
+            <th>15 </th>
+            <th>1 </th>
+            <th>33 </th>
+            <th>53.13% </th>
+            <th>41 </th>
+            <th>31 </th>
+            <th>+10 </th>
+        </tr>
+    </tbody>
+    <tbody>
+        <tr>
+            <th><img src="https://upload.wikimedia.org/wikipedia/en/4/4d/Logo_Edmonton_Oilers.svg" width="50" height="50"></th>
+            <th>Edmonton Oilers</th>
+            <th>24 </th>
+            <th>8 </th>
+            <th>16 </th>
+            <th>0 </th>
+            <th>16 </th>
+            <th>33.33% </th>
+            <th>55 </th>
+            <th>88 </th>
+            <th>-33 </th>
+        </tr>
+    </tbody>
+    <tbody>
+        <tr>
+            <th><img src="https://upload.wikimedia.org/wikipedia/commons/d/da/Hartford_Whalers_1992.svg" width="50" height="50"></th>
+            <th>Hartford Whalers</th>
+            <th>24 </th>
+            <th>7 </th>
+            <th>17 </th>
+            <th>0 </th>
+            <th>14 </th>
+            <th>29.17% </th>
+            <th>26 </th>
+            <th>79 </th>
+            <th>-53 </th>
+        </tr>
+    </tbody>
