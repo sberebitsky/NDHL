@@ -15,12 +15,12 @@ $password = $_POST['password'];
 if ($username === $sam_username && $password === $sam_password) {
     $_SESSION['loggedin'] = true;
     $_SESSION['name'] = "Sam";
-    header("Location: admin_home.php");
+    header("Location: admin/admin_home.php");
     exit;
 } elseif ($username === $peyton_username && $password === $peyton_password) {
     $_SESSION['loggedin'] = true;
     $_SESSION['name'] = "Peyton";
-    header("Location: admin_home.php");
+    header("Location: admin/admin_home.php");
     exit;
 } else {
     echo "<script>alert('Invalid credentials.'); window.location.href='login.html';</script>";

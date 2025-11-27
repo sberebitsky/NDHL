@@ -188,7 +188,7 @@ $result = $conn->query($sql);
 </table>
 
 <button onclick="window.location.href='logout.php'">Logout</button>
-
+<button onclick="window.location.href='admin_home.php'">Admin Home</button>
 </body>
 </html>
 <?php $conn->close(); ?>

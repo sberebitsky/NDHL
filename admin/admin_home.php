@@ -197,6 +197,7 @@ $conn->close();
 
   <div>
     <button onclick="window.location.href='view_signups.php'">View Signups</button>
+    <button onclick="window.location.href='draft.php'">Draft Night</button>
     <button onclick="window.location.href='logout.php'">Logout</button>
   </div>
 
