@@ -49,9 +49,12 @@ $teams = [
     }
     h1 { 
       font-family: 'Oswald', sans-serif; 
-      color:red; 
+      color: white; 
       text-align:center; 
       margin:0 0 18px 0; 
+    }
+    b {
+      color: red;
     }
     label { 
       display:block; 
@@ -114,12 +117,12 @@ $teams = [
 </head>
 <body>
   <div class="terminal">
-    <h1>Draft Night Terminal</h1>
+    <h1>Draft Night <b>Terminal</b></h1>
     <p class="small">Type the EXACT PSN (case-sensitive) and choose the Team. Then press Submit.</p>
 
     <form id="draftForm">
       <label for="psn">Player PSN</label>
-      <input type="text" id="psn" name="psn" placeholder="Enter exact PSN (e.g. JohnDoe123)" required autocomplete="on">
+      <input type="text" id="psn" name="psn" placeholder="Enter EXACT PSN (e.g. JohnDoe123)" required autocomplete="on">
 
       <label for="team">Select Team</label>
       <select id="team" name="team" required>

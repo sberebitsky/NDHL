@@ -39,6 +39,9 @@ $result = $conn->query($sql);
       margin: 40px 0;
       text-shadow: 2px 2px 5px #000;
     }
+    b {
+      color: red;
+    }
     table {
       width: 80%;
       margin: 40px auto;
@@ -161,7 +164,7 @@ $result = $conn->query($sql);
     </ul>
 </nav>
 
-<h1><b>Signups</b> Overview</h1>
+<h1>Signups <b>Overview</b></h1>
 
 <table>
   <tr>

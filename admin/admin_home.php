@@ -201,10 +201,6 @@ $conn->close();
     <button onclick="window.location.href='logout.php'">Logout</button>
   </div>
 
-  <footer>
-    <p>Hockey League Admin Dashboard</p>
-  </footer>
-
   <script>
     // Animate counting effect for each card
     function animateValue(id, end) {

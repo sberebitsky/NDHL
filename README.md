@@ -12,9 +12,8 @@ Back-End
 
 
 Draft Night
-- Draft Order entered
-- Terminal to enter drafted players (maybe?)
-    - Only available in the admin site. (maybe owner/gm site?)
+- Terminal to enter drafted players (maybe?) (COMPLETED)
+    - Only available in the admin site. (maybe owner/gm site?) (COMPLETED)
 - Entered players immediately placed into rosters.html
 - Need to emphasize that EXACT EAID MUST BE ENTERED
 

@@ -32,22 +32,18 @@ if (!$stmt) {
 $stmt->bind_param("sssss", $name, $psn, $position, $availability, $color);
 
 if ($stmt->execute()) {
-    // Optional: send an email notification
     $to = "sambereb@iu.edu";
     $subject = "New Hockey League Signup";
     $message = "Name: $name\nPSN: $psn\nPosition: $position\nAvailability: $availability\nColor: $color";
     $headers = "From: noreply@yourdomain.edu";
-
     // send email to host
     @mail($to, $subject, $message, $headers);
-
     // Redirects to thank-you page
     header("Location: /~sambereb/NDHL/thank-you.html");
     exit;
 } else {
     echo "Error saving signup: " . $stmt->error;
 }
-
 $stmt->close();
 $conn->close();
 ?>

@@ -50,23 +50,80 @@ $conn->close();
   <title>Rosters</title>
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto&display=swap" rel="stylesheet">
   <style>
-    body { font-family: 'Roboto', sans-serif; background: linear-gradient(135deg,#0f0f0f,#1c1c1c); color:#fff; margin:0; padding:30px; }
-    .container { width:90%; max-width:960px; margin:0 auto; }
-    header { text-align:center; margin-bottom:24px; }
-    header h1 { font-family:'Oswald',sans-serif; color:red; margin:0; }
-    .panel { background:#111; padding:18px; border-radius:10px; border:1px solid #222; box-shadow:0 6px 18px rgba(0,0,0,0.6); }
-    select { width:100%; padding:10px; border-radius:6px; background:#0b0b0b; color:#fff; border:1px solid #333; }
-    table { width:100%; margin-top:16px; border-collapse:collapse; }
-    th, td { padding:10px; text-align:left; border-bottom:1px solid #222; }
-    th { background:rgba(255,0,0,0.12); color:#fff; }
-    .none { padding:20px; color:#bbb; text-align:center; }
-    a.back { display:inline-block; margin-top:12px; color:#fff; background:#222; padding:8px 12px; text-decoration:none; border-radius:6px; }
+    body { 
+      font-family: 'Roboto', sans-serif; 
+      background: linear-gradient(135deg,#0f0f0f,#1c1c1c); 
+      color: #fff; 
+      margin: 0; 
+      padding: 30px; 
+    }
+    .container { 
+      width: 90%; 
+      max-width: 960px; 
+      margin: 0 auto; 
+    }
+    header { 
+      text-align: center; 
+      margin-bottom: 24px; 
+    }
+    header h1 { 
+      font-family: 'Oswald',sans-serif; 
+      color: white; 
+      margin:0; 
+    }
+    b {
+      color: red;
+    }
+
+    .panel { 
+      background: #111; 
+      padding: 18px; 
+      border-radius: 10px; 
+      border: 1px solid #222; 
+      box-shadow: 0 6px 18px rgba(0,0,0,0.6); 
+    }
+    select { 
+      width: 100%; 
+      padding: 10px; 
+      border-radius: 6px;
+      background: #0b0b0b; 
+      color: #fff; 
+      border: 1px solid #333; 
+    }
+    table { 
+      width: 100%; 
+      margin-top: 16px; 
+      border-collapse: collapse; 
+    }
+    th, td { 
+      padding: 10px; 
+      text-align: left; 
+      border-bottom: 1px solid #222; 
+    }
+    th { 
+      background:rgba(255,0,0,0.12); 
+      color:#fff; 
+    }
+    .none { 
+      padding:20px; 
+      color:#bbb; 
+      text-align:center; 
+    }
+    a.back { 
+      display:inline-block; 
+      margin-top:12px; 
+      color:#fff; 
+      background:#222; 
+      padding:8px 12px; 
+      text-decoration:none; 
+      border-radius:6px; 
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <header>
-      <h1>Team Rosters</h1>
+      <h1>Team <b>Rosters</b></h1>
       <p style="color:#bbb;">Select a team to view its drafted players.</p>
     </header>
 
