@@ -36,4 +36,3 @@ Web Scraper to do
 Way in the future
 - All players create an account on the site?
 - Implement messaging system
-- Sell to LG for the big bucks babyyyy
